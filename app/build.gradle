@@ -58,6 +58,8 @@ dependencies {
 
     // Hilt
     implementation Google.hiltAndroid
+    api AndroidX.hiltViewModel
+    api AndroidX.hiltWorkManager
     kapt Google.hiltAndroidCompiler
     kapt AndroidX.hiltCompiler
 }
