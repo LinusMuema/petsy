@@ -1,5 +1,4 @@
 include ':remote'
-include ':data_remote'
 include ':feature_dogs'
 include ':app'
 rootProject.name = "Petsy"
