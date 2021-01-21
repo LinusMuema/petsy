@@ -1,3 +1,4 @@
+include ':local'
 include ':remote'
 include ':feature_dogs'
 include ':app'

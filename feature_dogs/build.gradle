@@ -40,7 +40,8 @@ android {
 dependencies {
 
     // Shared resources
-    implementation project(path: ':remote')
+    implementation project(':remote')
+    implementation project(':local')
 
     implementation Jetbrains.kotlin
     implementation AndroidX.core

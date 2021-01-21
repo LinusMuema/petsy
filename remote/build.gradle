@@ -42,7 +42,7 @@ dependencies {
     androidTestImplementation AndroidX.junit
 
     // Retrofit
-    api Retrofit.retrofit
+    implementation Retrofit.retrofit
     implementation Retrofit.interceptor
     implementation Retrofit.converter
 
@@ -51,7 +51,6 @@ dependencies {
 
     // Coroutines
     implementation Jetbrains.coroutinesCore
-    implementation Jetbrains.coroutinesAndroid
 
     // Hilt
     implementation Google.hiltAndroid

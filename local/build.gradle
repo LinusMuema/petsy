@@ -1,8 +1,9 @@
 plugins {
-    id 'com.android.application'
+    id 'com.android.library'
     id 'kotlin-android'
     id 'kotlin-kapt'
     id 'dagger.hilt.android.plugin'
+    id 'org.jetbrains.kotlin.plugin.serialization'
 }
 
 android {
@@ -10,18 +11,15 @@ android {
     buildToolsVersion "30.0.2"
 
     defaultConfig {
-        applicationId "com.moose.petsy"
         minSdkVersion 23
         targetSdkVersion 30
         versionCode 1
         versionName "1.0"
 
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
+        consumerProguardFiles "consumer-rules.pro"
     }
 
-    buildFeatures {
-        viewBinding = true
-    }
     buildTypes {
         release {
             minifyEnabled false
@@ -34,33 +32,27 @@ android {
     }
     kotlinOptions {
         jvmTarget = '1.8'
-    }
+    }   
 }
 
 dependencies {
 
-    // Features
-    implementation project(':feature_dogs')
-    implementation project(':remote')
-    implementation project(':local')
-
     implementation Jetbrains.kotlin
-    implementation AndroidX.core
-    implementation AndroidX.fragment
-    implementation AndroidX.appCompat
-    implementation AndroidX.constraintLayout
+    testImplementation JUnit.junit
+    androidTestImplementation AndroidX.junit
 
-    // Navigation
-    implementation AndroidX.navigationFragment
-    implementation AndroidX.navigationUi
+    // Serialisation
+    implementation Jetbrains.serialization
+
+    // Room
+    implementation AndroidX.room
+    implementation AndroidX.roomCompiler
+
+    // Coroutines
+    implementation Jetbrains.coroutinesCore
 
     // Hilt
     implementation Google.hiltAndroid
-    implementation AndroidX.hiltViewModel
-    implementation AndroidX.hiltWorkManager
     kapt Google.hiltAndroidCompiler
     kapt AndroidX.hiltCompiler
-
-    // Google Guava issue
-    implementation 'com.google.guava:listenablefuture:9999.0-empty-to-avoid-conflict-with-guava'
 }
