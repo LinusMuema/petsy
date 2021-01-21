@@ -1,0 +1,11 @@
+<resources>
+    <style name="Theme.Petsy" parent="Theme.MaterialComponents.Light.NoActionBar">
+        <item name="colorPrimary">@color/primaryColor</item>
+        <item name="colorPrimaryVariant">@color/primaryLightColor</item>
+        <item name="colorOnPrimary">@color/primaryLightColor</item>
+        <item name="colorSecondary">@color/primaryDarkColor</item>
+        <item name="colorSecondaryVariant">@color/primaryColor</item>
+        <item name="colorOnSecondary">@color/primaryLightColor</item>
+        <item name="android:windowTranslucentStatus">true</item>
+    </style>
+</resources>

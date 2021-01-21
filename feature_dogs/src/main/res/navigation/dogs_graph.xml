@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/dogs_graph"
+    app:startDestination="@id/nav_dogs">
+
+    <fragment
+        android:id="@+id/nav_dogs"
+        android:name="com.moose.feature_dogs.DogsFragment"
+        android:label="Dogs"
+        tools:layout="@layout/fragment_dogs">
+
+        <deepLink app:uri="petsy://dogs"/>
+
+    </fragment>
+
+</navigation>

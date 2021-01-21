@@ -1,0 +1,63 @@
+plugins {
+    id 'com.android.application'
+    id 'kotlin-android'
+    id 'kotlin-kapt'
+    id 'dagger.hilt.android.plugin'
+}
+
+android {
+    compileSdkVersion 30
+    buildToolsVersion "30.0.2"
+
+    defaultConfig {
+        applicationId "com.moose.petsy"
+        minSdkVersion 23
+        targetSdkVersion 30
+        versionCode 1
+        versionName "1.0"
+
+        testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
+    }
+
+    buildFeatures {
+        viewBinding = true
+    }
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+        }
+    }
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_1_8
+        targetCompatibility JavaVersion.VERSION_1_8
+    }
+    kotlinOptions {
+        jvmTarget = '1.8'
+    }
+}
+
+dependencies {
+
+    // Features
+    api project(':feature_dogs')
+    api project(':remote')
+
+    implementation Jetbrains.kotlin
+    implementation AndroidX.core
+    implementation AndroidX.fragment
+    implementation AndroidX.appCompat
+    implementation AndroidX.constraintLayout
+
+    // Retrofit
+    api Retrofit.retrofit
+
+    // Navigation
+    implementation AndroidX.navigationFragment
+    implementation AndroidX.navigationUi
+
+    // Hilt
+    implementation Google.hiltAndroid
+    kapt Google.hiltAndroidCompiler
+    kapt AndroidX.hiltCompiler
+}

@@ -1,0 +1,66 @@
+ext {
+
+    google_hilt_version = "2.28-alpha"
+    coroutines_version = "1.4.2"
+    room_version = "2.2.6"
+    androidx_hilt_version = "1.0.0-alpha02"
+    lifecycle_version = "2.2.0"
+    navigation_version = "2.3.2"
+
+
+    JUnit = [
+            junit: "junit:junit:4.13.1"
+    ]
+
+    Coil = [
+            coil : "io.coil-kt:coil:1.1.1"
+    ]
+
+    Retrofit = [
+            retrofit : "com.squareup.retrofit2:retrofit:2.9.0",
+            interceptor : "com.squareup.okhttp3:logging-interceptor:4.9.0",
+            converter: "com.jakewharton.retrofit:retrofit2-kotlinx-serialization-converter:0.8.0"
+    ]
+
+    Google =  [
+            material : "com.google.android.material:material:1.2.1",
+            hiltAndroid : "com.google.dagger:hilt-android:$google_hilt_version",
+            hiltAndroidCompiler : "com.google.dagger:hilt-android-compiler:$google_hilt_version"
+    ]
+
+    Jetbrains = [
+            kotlin : "org.jetbrains.kotlin:kotlin-stdlib:1.4.21",
+            serialization : "org.jetbrains.kotlinx:kotlinx-serialization-json:1.0.1",
+            coroutinesCore : "org.jetbrains.kotlinx:kotlinx-coroutines-core:$coroutines_version",
+            coroutinesAndroid : "org.jetbrains.kotlinx:kotlinx-coroutines-android:$coroutines_version",
+    ]
+
+
+    AndroidX = [
+
+            core : "androidx.core:core-ktx:1.3.2",
+            appCompat : "androidx.appcompat:appcompat:1.2.0",
+            fragment: "androidx.fragment:fragment:1.2.5",
+            constraintLayout : "androidx.constraintlayout:constraintlayout:2.0.4",
+
+            junit : "androidx.test.ext:junit:1.1.2",
+            espresso : "androidx.test.espresso:espresso-core:3.3.0",
+
+            room : "androidx.room:room-ktx:$room_version",
+            roomCompiler : "androidx.room:room-compiler:$room_version",
+
+            navigationUi : "androidx.navigation:navigation-ui-ktx:$navigation_version",
+            navigationFragment : "androidx.navigation:navigation-fragment-ktx:$navigation_version",
+
+            workManager : "androidx.work:work-runtime-ktx:2.4.0",
+
+
+            liveData : "androidx.lifecycle:lifecycle-livedata-ktx:$lifecycle_version",
+            viewModel : "androidx.lifecycle:lifecycle-viewmodel-ktx:$lifecycle_version",
+
+
+            hiltViewModel : "androidx.hilt:hilt-lifecycle-viewmodel:$androidx_hilt_version",
+            hiltWorkManager : "androidx.hilt:hilt-work:$androidx_hilt_version",
+            hiltCompiler : "androidx.hilt:hilt-compiler:$androidx_hilt_version",
+    ]
+}
