@@ -30,7 +30,6 @@ object NetworkService {
 
     @Provides
     @Singleton
-    @Endpoints
     fun provideApiEndpoints(): ApiEndpoints {
         return retrofit.create(ApiEndpoints::class.java)
     }

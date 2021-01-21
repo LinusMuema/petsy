@@ -54,6 +54,9 @@ dependencies {
     implementation AndroidX.navigationFragment
     implementation AndroidX.navigationUi
 
+    // Room
+    implementation AndroidX.room
+
     // Hilt
     implementation Google.hiltAndroid
     implementation AndroidX.hiltViewModel

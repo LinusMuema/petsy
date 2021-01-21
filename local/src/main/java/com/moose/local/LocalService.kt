@@ -7,6 +7,7 @@ import dagger.Provides
 import dagger.hilt.InstallIn
 import dagger.hilt.android.components.ApplicationComponent
 import dagger.hilt.android.qualifiers.ApplicationContext
+import javax.inject.Singleton
 
 @Module
 @InstallIn(ApplicationComponent::class)
@@ -18,7 +19,8 @@ object LocalService {
     }
 
     @Provides
-    fun provideDao(database: AppDatabase): AppDao {
-        return database.dao()
+    @Singleton
+    fun provideDao(appDatabase: AppDatabase): AppDao {
+        return appDatabase.dao()
     }
 }
