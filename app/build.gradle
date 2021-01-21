@@ -40,8 +40,8 @@ android {
 dependencies {
 
     // Features
-    api project(':feature_dogs')
-    api project(':remote')
+    implementation project(':feature_dogs')
+    implementation project(':remote')
 
     implementation Jetbrains.kotlin
     implementation AndroidX.core
@@ -58,8 +58,8 @@ dependencies {
 
     // Hilt
     implementation Google.hiltAndroid
-    api AndroidX.hiltViewModel
-    api AndroidX.hiltWorkManager
+    implementation AndroidX.hiltViewModel
+    implementation AndroidX.hiltWorkManager
     kapt Google.hiltAndroidCompiler
     kapt AndroidX.hiltCompiler
 }
