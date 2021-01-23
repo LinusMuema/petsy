@@ -1,4 +1,4 @@
-package com.moose.feature_dogs
+package com.moose.feature_dogs.presentation
 
 import android.os.Bundle
 import android.util.Log
@@ -28,6 +28,7 @@ class DogsFragment : Fragment() {
             }
         }
 
+        viewModel.startWork(requireContext())
         return binding.root
     }
 

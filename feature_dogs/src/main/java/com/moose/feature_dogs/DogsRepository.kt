@@ -1,5 +1,6 @@
 package com.moose.feature_dogs
 
+import com.moose.feature_dogs.Constants.ANIMAL_TYPE
 import com.moose.local.Animal
 import com.moose.local.AppDao
 import com.moose.remote.ApiEndpoints
@@ -13,8 +14,8 @@ import kotlinx.coroutines.flow.Flow
 import javax.inject.Inject
 
 interface DogsRepository {
-    suspend fun getFact(animal: String): Fact
-    suspend fun getImage(animal: String): Image
+    suspend fun getFact(): Fact
+    suspend fun getImage(): Image
     suspend fun addDog(animal: Animal)
     val dog: Flow<List<Animal>>
 }
@@ -24,9 +25,9 @@ class DogsRepositoryImpl @Inject constructor(
     private val dao: AppDao
 ): DogsRepository {
 
-    override suspend fun getFact(animal: String): Fact = api.getFact(animal)
+    override suspend fun getFact(): Fact = api.getFact(ANIMAL_TYPE)
 
-    override suspend fun getImage(animal: String): Image = api.getImage(animal)
+    override suspend fun getImage(): Image = api.getImage(ANIMAL_TYPE)
 
     override suspend fun addDog(animal: Animal) = dao.addAnimal(animal)
 
