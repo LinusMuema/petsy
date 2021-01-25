@@ -7,9 +7,10 @@ import androidx.recyclerview.widget.RecyclerView
 import coil.load
 import com.moose.petsy.R
 import com.moose.petsy.databinding.NavItemBinding
+import com.moose.petsy.utils.Icon
 
 class NavListAdapter(
-    private val items: List<Int>,
+    private val items: List<Icon>,
 ): RecyclerView.Adapter<NavListAdapter.NavViewHolder>() {
 
     private var selectedIndex: Int = 0
@@ -37,19 +38,19 @@ class NavListAdapter(
     inner class NavViewHolder(private val binding: NavItemBinding): RecyclerView.ViewHolder(binding.root) {
         private val context = binding.root.context
 
-        fun bind(icon: Int) {
+        fun bind(icon: Icon) {
             with(binding){
                 itemLayout.background = null
-                navItem.load(icon)
+                navItem.load(icon.drawable)
             }
         }
 
-        fun bindStyled(icon: Int) {
+        fun bindStyled(icon: Icon) {
             val background =  ContextCompat.getDrawable(context, R.drawable.rounded)
 
             with(binding){
                 itemLayout.background = background
-                navItem.load(icon)
+                navItem.load(icon.drawable)
             }
         }
 
