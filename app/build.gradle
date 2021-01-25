@@ -50,6 +50,9 @@ dependencies {
     implementation AndroidX.appCompat
     implementation AndroidX.constraintLayout
 
+    // Coil
+    implementation Coil.coil
+
     // Navigation
     implementation AndroidX.navigationFragment
     implementation AndroidX.navigationUi
