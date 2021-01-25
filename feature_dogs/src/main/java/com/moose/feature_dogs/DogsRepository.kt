@@ -11,13 +11,14 @@ import dagger.Module
 import dagger.hilt.InstallIn
 import dagger.hilt.android.components.ApplicationComponent
 import kotlinx.coroutines.flow.Flow
+import kotlinx.coroutines.flow.map
 import javax.inject.Inject
 
 interface DogsRepository {
     suspend fun getFact(): Fact
     suspend fun getImage(): Image
     suspend fun addDog(animal: Animal)
-    val dog: Flow<List<Animal>>
+    val dog: Flow<Animal>
 }
 
 class DogsRepositoryImpl @Inject constructor(
@@ -31,7 +32,7 @@ class DogsRepositoryImpl @Inject constructor(
 
     override suspend fun addDog(animal: Animal) = dao.addAnimal(animal)
 
-    override val dog: Flow<List<Animal>> get() = dao.getAnimal("dog")
+    override val dog: Flow<Animal> get() = dao.getAnimal("dog").map { it[0] }
 
 }
 

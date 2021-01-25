@@ -10,6 +10,7 @@ import com.moose.feature_dogs.Constants.ANIMAL_TYPE
 import com.moose.feature_dogs.DogsRepository
 import com.moose.feature_dogs.domain.toPresentation
 import com.moose.local.Animal
+import kotlinx.coroutines.*
 import java.lang.Exception
 
 class DogsWork @WorkerInject constructor(
@@ -18,23 +19,26 @@ class DogsWork @WorkerInject constructor(
         private val repository: DogsRepository
 ): CoroutineWorker(context, params) {
 
+    private val images = mutableSetOf<String>()
+
     override suspend fun doWork(): Result {
 
         return try {
+
             val fact: String = repository.getFact().toPresentation()
-            val images: MutableList<String> = ArrayList()
+            (0..15).map { getImages() }.joinAll()
 
-            for (i in 0..9){
-                val image = repository.getImage().toPresentation()
-                images.add(image)
-            }
-
-            val animal = Animal(ANIMAL_TYPE, fact, images)
+            val animal = Animal(ANIMAL_TYPE, fact, images.toList())
             repository.addDog(animal)
+
             Result.success()
-        } catch (e: Exception){
-            Log.e("Petsy", "doWork: $e")
-            Result.failure()
+        } catch (e: Exception){ Result.failure() }
+    }
+
+    private suspend fun getImages(): Job {
+        return GlobalScope.launch {
+            val image = repository.getImage().toPresentation()
+            images.add(image)
         }
     }
 }
