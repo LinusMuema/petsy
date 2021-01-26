@@ -26,7 +26,6 @@ class DogsFragment : Fragment(R.layout.fragment_dogs) {
         val manager = StaggeredGridLayoutManager(2, StaggeredGridLayoutManager.VERTICAL)
         manager.gapStrategy = StaggeredGridLayoutManager.GAP_HANDLING_MOVE_ITEMS_BETWEEN_SPANS
 
-        viewModel.startWork(requireContext())
         viewModel.dogs.observe( viewLifecycleOwner, {
             binding.recyclerView.apply {
                 layoutManager = manager

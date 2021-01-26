@@ -8,6 +8,7 @@ import coil.load
 import com.moose.petsy.R
 import com.moose.petsy.databinding.NavItemBinding
 import com.moose.petsy.utils.Icon
+import com.moose.petsy.utils.format
 
 class NavListAdapter(
     private val items: List<Icon>,
@@ -42,6 +43,7 @@ class NavListAdapter(
             with(binding){
                 itemLayout.background = null
                 navItem.load(icon.drawable)
+                navTitle.text = icon.name.format()
             }
         }
 
@@ -51,6 +53,7 @@ class NavListAdapter(
             with(binding){
                 itemLayout.background = background
                 navItem.load(icon.drawable)
+                navTitle.text = icon.name.format()
             }
         }
 
