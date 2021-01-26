@@ -32,6 +32,7 @@ class DogsFragment : Fragment(R.layout.fragment_dogs) {
         manager.gapStrategy = StaggeredGridLayoutManager.GAP_HANDLING_MOVE_ITEMS_BETWEEN_SPANS
 
         viewModel.dogs.observe( viewLifecycleOwner, {
+            binding.fact.text = it.fact
             binding.recyclerView.apply {
                 layoutManager = manager
                 setHasFixedSize(true)
