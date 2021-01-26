@@ -2,4 +2,6 @@
     <string name="app_name">feature_dogs</string>
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="fact_icon">fact icon</string>
+    <string name="test_fact">Dogs are awesome. Dogs are fun. Dogs are cute. Dogs are better than Cats....sue me!</string>
 </resources>
