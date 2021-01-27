@@ -4,6 +4,7 @@ plugins {
     id 'kotlin-kapt'
     id 'dagger.hilt.android.plugin'
     id 'org.jetbrains.kotlin.plugin.serialization'
+
 }
 
 android {
@@ -39,7 +40,11 @@ dependencies {
 
     implementation Jetbrains.kotlin
     testImplementation JUnit.junit
+    testImplementation Mockito.kotlin
     androidTestImplementation AndroidX.junit
+    androidTestImplementation AndroidX.testCore
+    androidTestImplementation AndroidX.testRunner
+    androidTestImplementation AndroidX.testRules
 
     // Serialisation
     implementation Jetbrains.serialization
@@ -47,6 +52,7 @@ dependencies {
     // Room
     implementation AndroidX.room
     implementation AndroidX.roomCompiler
+    implementation AndroidX.roomTesting
 
     // Coroutines
     implementation Jetbrains.coroutinesCore

@@ -1,20 +1,15 @@
 package com.moose.feature_dogs.work
 
 import android.content.Context
-import android.util.Log
 import androidx.hilt.Assisted
 import androidx.hilt.work.WorkerInject
-import androidx.lifecycle.LifecycleCoroutineScope
 import androidx.work.CoroutineWorker
 import androidx.work.WorkerParameters
 import com.moose.feature_dogs.Constants.ANIMAL_TYPE
-import com.moose.feature_dogs.DogsRepository
+import com.moose.feature_dogs.data.DogsRepository
 import com.moose.feature_dogs.domain.toPresentation
 import com.moose.local.Animal
 import kotlinx.coroutines.*
-import kotlinx.coroutines.flow.collect
-import kotlinx.coroutines.flow.flow
-import kotlinx.coroutines.flow.flowOf
 import java.lang.Exception
 
 class DogsWork @WorkerInject constructor(

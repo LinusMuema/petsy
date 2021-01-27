@@ -1,4 +1,4 @@
-package com.moose.feature_dogs
+package com.moose.feature_dogs.data
 
 import com.moose.feature_dogs.Constants.ANIMAL_TYPE
 import com.moose.local.Animal
@@ -32,7 +32,7 @@ class DogsRepositoryImpl @Inject constructor(
 
     override suspend fun addDog(animal: Animal) = dao.addAnimal(animal)
 
-    override val dog: Flow<Animal> get() = dao.getAnimal("dog").map { it[0] }
+    override val dog: Flow<Animal> get() = dao.getAnimal("dog")
 
 }
 

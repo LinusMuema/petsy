@@ -13,5 +13,5 @@ interface AppDao {
     suspend fun addAnimal(animal: Animal)
 
     @Query("SELECT * FROM animal WHERE name=:name")
-    fun getAnimal(name: String): Flow<List<Animal>>
+    fun getAnimal(name: String): Flow<Animal>
 }

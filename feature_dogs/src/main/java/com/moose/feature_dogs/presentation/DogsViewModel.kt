@@ -9,7 +9,7 @@ import androidx.work.Constraints
 import androidx.work.NetworkType
 import androidx.work.OneTimeWorkRequestBuilder
 import androidx.work.WorkManager
-import com.moose.feature_dogs.DogsRepository
+import com.moose.feature_dogs.data.DogsRepository
 import com.moose.feature_dogs.work.DogsWork
 
 class DogsViewModel @ViewModelInject constructor(repository: DogsRepository) : ViewModel() {

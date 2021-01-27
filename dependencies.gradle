@@ -7,6 +7,9 @@ ext {
     lifecycle_version = "2.2.0"
     navigation_version = "2.3.2"
 
+    Mockito = [
+            kotlin: "com.nhaarman.mockitokotlin2:mockito-kotlin:2.2.0"
+    ]
 
     JUnit = [
             junit: "junit:junit:4.13.1"
@@ -45,19 +48,21 @@ ext {
 
             junit : "androidx.test.ext:junit:1.1.2",
             espresso : "androidx.test.espresso:espresso-core:3.3.0",
+            testRunner: "androidx.test:runner:1.1.1",
+            testCore : "androidx.test:core:1.1.0",
+            testRules : "androidx.test:rules:1.1.1",
 
             room : "androidx.room:room-ktx:$room_version",
             roomCompiler : "androidx.room:room-compiler:$room_version",
+            roomTesting : "androidx.room:room-testing:$room_version",
 
             navigationUi : "androidx.navigation:navigation-ui-ktx:$navigation_version",
             navigationFragment : "androidx.navigation:navigation-fragment-ktx:$navigation_version",
 
             workManager : "androidx.work:work-runtime-ktx:2.4.0",
 
-
             liveData : "androidx.lifecycle:lifecycle-livedata-ktx:$lifecycle_version",
             viewModel : "androidx.lifecycle:lifecycle-viewmodel-ktx:$lifecycle_version",
-
 
             hiltViewModel : "androidx.hilt:hilt-lifecycle-viewmodel:$androidx_hilt_version",
             hiltWorkManager : "androidx.hilt:hilt-work:$androidx_hilt_version",
