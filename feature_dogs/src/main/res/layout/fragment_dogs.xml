@@ -22,7 +22,7 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:background="#CC000000"
-        android:visibility="invisible" />
+        android:visibility="invisible"/>
 
     <com.google.android.material.card.MaterialCardView
         android:id="@+id/fab"
@@ -51,9 +51,8 @@
         android:id="@+id/fact"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:text="@string/test_fact"
         android:textSize="15sp"
-        android:visibility="gone"
+        android:visibility="invisible"
         app:layout_constraintBottom_toBottomOf="@id/fab"
         app:layout_constraintStart_toStartOf="@+id/fact_icon"
         app:layout_constraintTop_toBottomOf="@+id/fact_icon" />
