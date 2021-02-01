@@ -17,11 +17,6 @@
 
     </Transition>
 
-    <Transition
-        motion:constraintSetEnd="@id/start"
-        motion:constraintSetStart="@id/end"
-        motion:duration="500" />
-
     <ConstraintSet android:id="@+id/start" motion:transitionEasing="accelerate">
 
         <Constraint android:id="@+id/fact">
